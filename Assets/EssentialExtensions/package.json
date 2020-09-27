@@ -1,0 +1,8 @@
+{
+  "name": "com.magicant.essential-extensions",
+  "displayName": "Essential Extensions",
+  "version": "1.0.0",
+  "unity": "2019.1",
+  "description": "Essential class and extensions for Unity.",
+  "dependencies": {}
+}
