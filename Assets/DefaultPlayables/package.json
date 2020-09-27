@@ -1,0 +1,10 @@
+{
+  "name": "com.unity.assetstore.default-playables",
+  "displayName": "Default Playables",
+  "version": "1.8.0",
+  "unity": "2017.1",
+  "description": "This package includes both the Timeline Playables Wizard and a number of example Playables for you to use with Timeline.",
+  "dependencies": {
+    "com.unity.timeline": "1.0.0"
+  }
+}
