@@ -1,0 +1,8 @@
+{
+  "name": "com.listwon.unity-file-extensions",
+  "displayName": "Unity File Extensions",
+  "description": "Unity File Extensions is the plugin that shows file extensions in the Project Window.",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "dependencies": {}
+}
