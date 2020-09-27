@@ -445,6 +445,17 @@ namespace UniRx.Triggers
             return GetOrAddComponent<ObservableParticleTrigger>(component.gameObject).OnParticleCollisionAsObservable();
         }
 
+#if UNITY_2018_2_OR_NEWER
+
+        /// <summary>OnParticleSystemStopped is called when all particles in the system have died, and no new particles will be born.</summary>
+        public static IObservable<Unit> OnParticleSystemStoppedAsObservable(this Component component)
+        {
+            if (component == null || component.gameObject == null) return Observable.Empty<Unit>();
+            return GetOrAddComponent<ObservableParticleTrigger>(component.gameObject).OnParticleSystemStoppedAsObservable();
+        }
+
+#endif
+
 #if UNITY_5_4_OR_NEWER
 
         /// <summary>OnParticleTrigger is called when any particles in a particle system meet the conditions in the trigger module.</summary>

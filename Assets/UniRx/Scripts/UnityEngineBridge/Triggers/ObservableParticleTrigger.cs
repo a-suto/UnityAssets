@@ -7,6 +7,9 @@ namespace UniRx.Triggers
     public class ObservableParticleTrigger : ObservableTriggerBase
     {
         Subject<GameObject> onParticleCollision;
+#if UNITY_2018_2_OR_NEWER
+        Subject<Unit> onParticleSystemStopped;
+#endif
 #if UNITY_5_4_OR_NEWER
         Subject<Unit> onParticleTrigger;
 #endif
@@ -22,6 +25,22 @@ namespace UniRx.Triggers
         {
             return onParticleCollision ?? (onParticleCollision = new Subject<GameObject>());
         }
+
+#if UNITY_2018_2_OR_NEWER
+
+        /// <summary>OnParticleSystemStopped is called when all particles in the system have died, and no new particles will be born.</summary>
+        void OnParticleSystemStopped()
+        {
+            if (onParticleSystemStopped != null) onParticleSystemStopped.OnNext(Unit.Default);
+        }
+
+        /// <summary>OnParticleSystemStopped is called when all particles in the system have died, and no new particles will be born.</summary>
+        public IObservable<Unit> OnParticleSystemStoppedAsObservable()
+        {
+            return onParticleSystemStopped ?? (onParticleSystemStopped = new Subject<Unit>());
+        }
+
+#endif
 
 #if UNITY_5_4_OR_NEWER
 
@@ -45,6 +64,12 @@ namespace UniRx.Triggers
             {
                 onParticleCollision.OnCompleted();
             }
+#if UNITY_2018_2_OR_NEWER
+            if (onParticleSystemStopped != null)
+            {
+                onParticleSystemStopped.OnCompleted();
+            }
+#endif
 #if UNITY_5_4_OR_NEWER
             if (onParticleTrigger != null)
             {
