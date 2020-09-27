@@ -1,0 +1,8 @@
+{
+  "name": "com.magicant.debug-log-suppressor",
+  "displayName": "Debug Log Suppressor",
+  "version": "1.0.0",
+  "unity": "2017.1",
+  "description": "Suppress all Unity logs in release build.",
+  "dependencies": {}
+}
