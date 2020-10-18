@@ -1,0 +1,8 @@
+{
+  "name": "com.rijicho_nl.icon-viewer",
+  "displayName": "Icon Viewer",
+  "version": "1.0.0",
+  "unity": "2019.3",
+  "description": "【Unity】Editorのbuilt-inアイコンを一覧表示してあれこれする【Editor拡張】\nhttps://qiita.com/Rijicho_nl/items/88e71b5c5930fc7a2af1",
+  "dependencies": {}
+}
